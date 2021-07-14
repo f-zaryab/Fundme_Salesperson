@@ -1,0 +1,681 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fund Me V2</title>
+
+    <!-- Fonts Family -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <!-- style CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+
+</head>
+<body>
+    <!------------------------------------------- HEADER --------------------------------------------------------->
+    <header class="header_top bg-header" style="position: sticky; top: 0; z-index: 20;">
+        <div class="container" style="height: 100%;">
+            <div class="d-flex flex-nowrap align-items-center" style="height: 100%">
+                <div class="d-flex flex-nowrap justify-content-between align-items-center" style="height: 100%; gap: 15px;">
+                    <a href="#" class="d-flex align-items-center" style="gap: 5px; height: 100%;"><img src="assets/images/SVG/fundme_logo_simple.svg" alt="fundme-logo"></a>
+                    <a href="#" class="d-flex align-items-center" style="gap: 5px; height: 100%;">
+                        <img src="assets/images/SVG/header_dashboard_icon.svg" alt="fundme-logo">
+                        <span class="d-none d-lg-flex">Dashboard</span>
+                    </a>
+                    <a href="#" class="d-flex align-items-center" style="gap: 5px; height: 100%;">
+                        <img src="assets/images/SVG/header_application_icon.svg" alt="fundme-logo">
+                        <span class="d-none d-lg-flex">Applications</span>
+                    </a>
+                </div>
+                <div class="d-flex flex-wrap justify-content-center ml-auto" style="gap: 10px;">
+                    <div class="nav-item dropdown d-flex align-items-center">
+                        <a class="nav-link dropdown-toggle position-relative" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="assets/images/header_notification-bell.svg" alt="notification-icon">
+                            <img style="position: absolute; top: 5px; left: 22px;" src="assets/images/Rectangle_header.svg">
+                            <p id="notifications_no" style="position: absolute; top: 2px; left: 27px; color: black; font-size: 11px;">2</p>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                          <a class="dropdown-item" href="#">Notificaton 1</a>
+                          <a class="dropdown-item" href="#">Notification 2</a>
+                          <a class="dropdown-item" href="#">Notification 3</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle header_text_right" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <span class="d-none d-sm-flex">valdis@domain.com</span> 
+                              <img class="d-none d-sm-flex" src="assets/images/header_dropdown_arrow_top.svg">
+                              <div class="d-flex align-items-center ml-3"><img src="assets/images/svg/header_user_dp.svg"></div>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                              <a class="dropdown-item" href="#">My Profile</a>
+                              <a class="dropdown-item" href="#">My Account</a>
+                              <a class="dropdown-item" href="#">Preferences</a>
+                            </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!----------------------------------------- SUB-HEADER --------------------------------------------------------->
+    <section class="sub-header bg-white" style="position: sticky; top: 50px; z-index: 15;">
+        <div class="container">
+            <div class="sub-header sub-header-upper-blk d-flex flex-wrap justify-content-between align-items-center">
+                <!-- Status and Back Button -->
+                <div class="my-3 my-sm-0 d-flex flex-nowrap justify-content-start align-items-center" style="width: 33%; min-width: min-content;"> 
+                    <div>
+                        <button type="button" class="btn btn_back"><img src="assets/images/back_arrow_subheader.svg"></button>
+                    </div>
+                    <div class="ml-2">
+                        <p class="d-none d-md-flex" id="app_address">1900 Willow Street, New Haven, MA</p>
+                        <p class="d-flex d-md-none" style="margin-right: 15px;">Back</p>
+                    </div>
+                </div>
+                <!-- Progress Bar -->
+                <div class="my-3 my-sm-0" style="width: 35%; min-width: min-content;">
+                    <select class="custom-select project_status">
+                        <option selected>Project Status</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                    <div class="bar" style="width: 120px;">
+                        <div class="progress" style="width: 20%;"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+                <!-- Archives Button -->
+                <div class="my-3 my-sm-0 d-flex flex-wrap justify-content-center">
+                    <a href='#' class="btn_grey_outline">archive</a>
+                </div>
+            </div>
+                                    
+        </div>
+    </section>
+
+    <main class="body bg_main ">
+        <div class="container pt-5">
+            <div class="row">
+        
+                <!-- ================================== Main Central Body ===============================================--->
+                   
+                        <!--------------------------------  Left Column --------------------------------------------------->
+                        <section class="LEFT col-12 col-xl-3 order-last order-xl-first" >
+                            <div style="position: sticky; top: 226px; z-index: 10;" class="side_box">
+                                <!-- Loan Details -->
+                                <div class="heading d-flex flex-nowrap justify-content-between align-items-center">
+                                    <h2>Loan Details</h2>
+                                    <p>78%</p>
+                                </div>
+                                <div class="list_items" style="display: grid; grid-template-columns: 2fr 3fr;">
+                                    <p>Type</p>
+                                    <p>Fix & Flips</p>
+                                    <p>Purpose</p>
+                                    <p>Purchase</p>
+                                    <p>Type</p>
+                                    <p>Multi-family</p>
+                                    <p>Entity</p>
+                                    <p>Yes</p>
+                                    <p>Closing</p>
+                                    <p>07/16/2021</p>
+                                </div>
+                                <h3>Loan Details</h3>
+                                <div class="list_items" style="display: grid; grid-template-columns: 2fr 3fr;">
+                                    <p>Term</p>
+                                    <p>24 months</p>
+                                    <p>Down</p>
+                                    <p>10.00%</p>
+                                    <p>Purchase</p>
+                                    <p>$450,000</p>
+                                    <p>AIV</p>
+                                    <p>$500,000</p>
+                                    <p>Rehab</p>
+                                    <p>$50,000</p>
+                                    <p>ARV</p>
+                                    <p>$670,000</p>
+                                    <p>Amount</p>
+                                    <p>$520,000</p>
+                                    <p>LTV</p>
+                                    <p>72.55%</p>
+                                    <p>Reserves</p>
+                                    <p>$120,500</p>
+                                </div>
+                                <h3>Capital</h3>
+                                <div class="list_items" style="display: grid; grid-template-columns: 2fr 3fr;">
+                                    <p>Base Rate</p>
+                                    <p>7.25%</p>
+                                    <p>Offer Rate</p>
+                                    <p>9.75%</p>
+                                    <p>Spread</p>
+                                    <p>2.00%</p>
+                                    <p>F Orig. Fee</p>
+                                    <p>$24,389.11</p>
+                                    <p>B Orig. Fee</p>
+                                    <p>$3,490.22</p>
+                                </div>
+                            </div>
+                        </section>
+    
+                        <!-------------------------------  Center Column ------------------------------------------------->
+                        <section class="CENTER  col-12 col-xl-6 order-first order-xl-0">
+                                 
+
+                            <!-- ============================ Documents/Tasks ================================== -->
+                            <div class="block_container" id="communication">
+                                <div class="container" style="padding-left: 5%; padding-right: 5%;">
+                                    <div class="d-flex flex-nowrap justify-content-between align-items-center" style="padding-top: 15px; padding-bottom: 15px;">
+                                        <!-- Top Nav List Items -->
+                                        <div class="top_tabs">
+                                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                                <li class="nav-item mr-4" role="presentation">
+                                                  <a class="nav-link active" id="documents-tab" data-toggle="tab" href="#documents" role="tab" aria-controls="sms" aria-selected="true">
+                                                      <img src="assets/images/SVG/grey_circle.svg">
+                                                      Documents (1/4) 
+                                                     
+                                                  </a>
+                                                </li>
+                                                <li class="nav-item mr-4" role="presentation">
+                                                  <a class="nav-link" id="email-tab" data-toggle="tab" href="#tasks" role="tab" aria-controls="tasks" aria-selected="false">
+                                                      <img src="assets/images/SVG/grey_circle.svg">
+                                                      Tasks
+                                                  </a>
+                                                </li>
+                                                
+                                                
+                                            </ul>
+                                        </div>
+                                        <!-- Toggle button -->
+                                        <button type="button" class="btn btn_openclose_overview btn_openclose_icon px-0" data-toggle="collapse" data-target="#BLK-data-doc">
+                                            <!-- <div class="d-flex align-items-center"> -->
+                                                <img src="assets/images/toggle_add_icon.svg">
+                                            <!-- </div> -->
+                                        </button>
+
+                                    </div>
+                                    <div id="BLK-data-doc" class="collapse collapsable-block">
+                                        <div class="tab-content" id="myTabContent">
+                                            <!-- Documents Panel -->
+                                            <div class="title tab-pane fade show active" id="documents" role="tabpanel" aria-labelledby="documents-tab">
+                                                <form id="upload_form" enctype="multipart/form-data" role="form" method="POST" accept="">
+                                                    <ul class="list-group">
+                                                        <!-- List-Item:1 -->
+                                                        <li class="list-group-item submited">
+                                                            <span>
+                                                                Photo ID 
+                                                                <a class="btn_grey_transparent" target="_blank" rel="noopener noreferrer" href="">
+                                                                    Replace
+                                                                    <img src="assets/images/SVG/doc_undo_icon.svg">
+                                                                </a>
+                                                            </span>
+                                                        </li>
+                                                        <!-- List-Item:2 -->
+                                                        <li class="list-group-item">
+                                                            <span>
+                                                                2 Months of Bank Statements 
+                                                                <a class="btn_grey_transparent" target="_blank" rel="noopener noreferrer" href="">
+                                                                    Upload
+                                                                    <img src="assets/images/SVG/doc_upload_icon.svg">
+                                                                </a>
+                                                            </span>
+                                                        </li>
+                                                        <!-- List-Item:3 -->
+                                                        <li class="list-group-item">
+                                                            <span>
+                                                                Fix & Flip History 
+                                                                <a class="btn_grey_transparent" target="_blank" rel="noopener noreferrer" href="">
+                                                                    Upload
+                                                                    <img src="assets/images/SVG/doc_upload_icon.svg">
+                                                                </a>
+                                                            </span>
+                                                        </li>
+                                                        <!-- List-Item:4 -->
+                                                        <li class="list-group-item">
+                                                            <span>
+                                                                Entity Docs 
+                                                                <a class="btn_grey_transparent" target="_blank" rel="noopener noreferrer" href="">
+                                                                    Upload
+                                                                    <img src="assets/images/SVG/doc_upload_icon.svg">
+                                                                </a>
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </form>
+                                            </div>
+                                            <!-- Tasks Panel -->
+                                            <div class="title tab-pane fade" id="tasks" role="tabpanel" aria-labelledby="tasks-tab">
+                                                <form id="upload_form" enctype="multipart/form-data" role="form" method="POST" accept="">
+                                                    <ul class="list-group">
+                                                        <!-- List-Item:1 -->
+                                                        <li class="list-group-item submited checked">
+                                                            <span>
+                                                                <p>Follow up with Rick</p>
+                                                                <!-- <a class="btn_grey_transparent" target="_blank" rel="noopener noreferrer" href="">
+                                                                    Replace
+                                                                    <img src="assets/images/SVG/doc_undo_icon.svg">
+                                                                </a> -->
+                                                                <div class="task_subdiv" style="width: 40%;">
+                                                                    <button class="btn_transparent">
+                                                                        <img src="assets/images/SVG/tasks_person_icon.svg">
+                                                                        Andy P.
+                                                                    </button>
+                                                                    <button class="btn_grey_lightSolid">
+                                                                        Yesterday
+                                                                    </button>
+                                                                </div>
+                                                            </span>
+                                                        </li>
+                                                        <!-- List-Item:2 -->
+                                                        <li class="list-group-item">
+                                                            <span>
+                                                                <p>Send over pricing sheet with details</p>
+                                                                <!-- <a class="btn_grey_transparent" target="_blank" rel="noopener noreferrer" href="">
+                                                                    Replace
+                                                                    <img src="assets/images/SVG/doc_undo_icon.svg">
+                                                                </a> -->
+                                                                <div class="task_subdiv" style="width: 40%;">
+                                                                    <button class="btn_transparent">
+                                                                        <img src="assets/images/SVG/tasks_person_icon.svg">
+                                                                        Andy P.
+                                                                    </button>
+                                                                    <button class="btn_grey_lightSolid">
+                                                                        <img src="assets/images/SVG/exclaimation_mark.svg">
+                                                                        Today
+                                                                    </button>
+                                                                </div>
+                                                            </span>
+                                                        </li>
+                                                        <!-- List-Item:3 -->
+                                                        <li class="list-group-item">
+                                                            <span>
+                                                                <p>Send over pricing sheet with details</p>
+                                                                <!-- <a class="btn_grey_transparent" target="_blank" rel="noopener noreferrer" href="">
+                                                                    Replace
+                                                                    <img src="assets/images/SVG/doc_undo_icon.svg">
+                                                                </a> -->
+                                                                <div class="task_subdiv" style="width: 40%;">
+                                                                    <button class="btn_transparent">
+                                                                        <img src="assets/images/SVG/tasks_person_icon.svg">
+                                                                        Andy P.
+                                                                    </button>
+                                                                    <button class="btn_grey_lightSolid">
+                                                                        Tomorrow
+                                                                    </button>
+                                                                </div>
+                                                            </span>
+                                                        </li>
+                                                       
+                                                    </ul>
+                                                </form>
+                                            </div>
+                                            
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                 
+                            </div>
+
+                            <!--============================= Communication Block ============================== -->
+                            <div class="block_container" id="communication">
+                                <div class="container" style="padding-left: 5%; padding-right: 5%; " >
+                                    <div class="d-flex flex-nowrap justify-content-between align-items-center" style="padding-top: 15px; padding-bottom: 15px;">
+                                        <!-- Top Nav List Items -->
+                                        <div class="top_tabs">
+                                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                                <li class="nav-item mr-2 mr-sm-4" role="presentation">
+                                                  <a class="nav-link active" id="sms-tab" data-toggle="tab" href="#sms" role="tab" aria-controls="sms" aria-selected="true">
+                                                      <img src="assets/images/SVG/grey_circle.svg">
+                                                      SMS
+                                                  </a>
+                                                </li>
+                                                <li class="nav-item  mr-2 mr-sm-4" role="presentation">
+                                                  <a class="nav-link" id="email-tab" data-toggle="tab" href="#email" role="tab" aria-controls="email" aria-selected="false">
+                                                      <img src="assets/images/SVG/grey_circle.svg">
+                                                      Email
+                                                  </a>
+                                                </li>
+                                                <li class="nav-item  mr-2 mr-sm-4" role="presentation">
+                                                  <a class="nav-link" id="call-tab" data-toggle="tab" href="#call" role="tab" aria-controls="call" aria-selected="false">
+                                                      <img src="assets/images/SVG/grey_circle.svg">
+                                                      Call
+                                                  </a>
+                                                </li>
+                                                <li class="nav-item  mr-2 mr-sm-4" role="presentation">
+                                                    <a class="nav-link" id="notes-tab" data-toggle="tab" href="#notes" role="tab" aria-controls="notes" aria-selected="false">
+                                                        <img src="assets/images/SVG/grey_circle.svg">
+                                                        Notes
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!-- Toggle button -->
+                                        <button type="button" class="btn btn_openclose_overview btn_openclose_icon px-0" data-toggle="collapse" data-target="#BLK-data-com">
+                                            <!-- <div class="d-flex align-items-center"> -->
+                                                <img src="assets/images/toggle_add_icon.svg">
+                                            <!-- </div> -->
+                                        </button>
+
+                                    </div>
+                                    <div id="BLK-data-com" class="collapse collapsable-block">
+                                        <div class="tab-content" id="myTabContent">
+                                            <!-- SMS Panel -->
+                                            <div class="title tab-pane fade show active" id="sms" role="tabpanel" aria-labelledby="sms-tab">
+                                                <div class="d-flex flex-nowrap justify-content-start align-items-center mb-3" style="gap:20px">
+                                                    <p>Phone</p>
+                                                    <p id="contact_phone">(499) 3902 100</p>
+                                                </div>
+                                                <hr>
+                                                <form>
+                                                    <div class="form-group">
+                                                        <textarea class="form-control manual_textarea_class" id="exampleFormControlTextarea1" rows="3" placeholder="Type your message here..." style="border: none; resize: none;"></textarea>
+                                                    </div> 
+                                                    <div class="d-flex flex-wrap justify-content-between align-items-center" style="padding-bottom: 5%;">
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                                            <label class="custom-control-label followUp_tick" for="customCheck1">Create follow-up task on no reply</label>
+                                                        </div>
+                                                        <div class="btn_grey_div">
+                                                            <button type="submit" class="btn_grey_solid w-100">Send</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <!-- Email Panel -->
+                                            <div class="title tab-pane fade" id="email" role="tabpanel" aria-labelledby="email-tab">
+                                                <form>
+                                                    <div class="form-group row mb-0">
+                                                        <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                                                        <div class="col-sm-10">
+                                                          <input type="email" class="form-control formControl_comm" id="inputEmail3" placeholder="valdis@domain.com">
+                                                        </div>
+                                                    </div>
+                                                    <hr>
+                                                    <div class="form-group row mb-0">
+                                                        <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                                                        <div class="col-sm-10">
+                                                          <input type="password" class="form-control formControl_comm" id="inputPassword3" placeholder="valdis@domain.com">
+                                                        </div>
+                                                    </div>
+                                                    <hr>
+                                                    <div class="form-group row mb-0">
+                                                        <label for="subject" class="col-sm-2 col-form-label">Subject</label>
+                                                        <div class="col-sm-10">
+                                                          <input type="text" class="form-control formControl_comm" id="subject" placeholder="Hey Jackson! How are you?">
+                                                        </div>
+                                                    </div>
+                                                    <hr>
+                                                    <div class="form-group">
+                                                        <textarea class="form-control manual_textarea_class" id="exampleFormControlTextarea1" rows="3" placeholder="Type your message here..." style="border: none; resize: none;"></textarea>
+                                                    </div> 
+                                                    <div class="wysiwg_block">Basic WYSIWG Bar</div>
+                                                    <div class="d-flex flex-wrap justify-content-between align-items-center" style="padding-bottom: 5%;">
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                                            <label class="custom-control-label followUp_tick" for="customCheck2">Create follow-up task on no reply</label>
+                                                        </div>
+                                                        <div class="btn_grey_div">
+                                                            <button type="submit" class="btn_grey_solid w-100">Send</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <!-- Call Panel -->
+                                            <div class="title tab-pane fade" id="call" role="tabpanel" aria-labelledby="call-tab">
+                                                <div class=" title d-flex flex-wrap justify-content-between align-items-center">
+                                                    <div class="d-flex flex-nowrap justify-content-between align-items-center">
+                                                        <p>Length</p>
+                                                        <select class="custom-select manual_select">
+                                                            <option selected>1:23 minutes</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                          </select>
+                                                    </div>
+                                                    <div class="d-flex flex-nowrap justify-content-between align-items-center">
+                                                        <p>Outcome</p>
+                                                        <select class="custom-select manual_select">
+                                                            <option selected>Left Voicemail</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                          </select>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <form>
+                                                    <div class="form-group">
+                                                        <textarea class="form-control manual_textarea_class" id="exampleFormControlTextarea1" rows="3" placeholder="Type your message here..." style="border: none; resize: none;"></textarea>
+                                                    </div> 
+                                                    <div class="d-flex flex-wrap justify-content-between align-items-center" style="padding-bottom: 5%;">
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="customCheck3">
+                                                            <label class="custom-control-label followUp_tick" for="customCheck3">Create follow-up task on no reply</label>
+                                                        </div>
+                                                        <div class="btn_grey_div">
+                                                            <button type="submit" class="btn_grey_solid w-100">Send</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <!-- Notes Panel -->
+                                            <div class="title tab-pane fade" id="notes" role="tabpanel" aria-labelledby="notes-tab">
+                                                <form>
+                                                    <div class="form-group">
+                                                        <textarea class="form-control manual_textarea_class" id="exampleFormControlTextarea1" rows="3" placeholder="Type your message here..." style="border: none; resize: none;"></textarea>
+                                                    </div> 
+                                                    <div class="wysiwg_block">Bold / Italic / Underlined / Link</div>
+                                                    <div class="d-flex flex-wrap justify-content-between align-items-center" style="padding-bottom: 5%;">
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="customCheck4">
+                                                            <label class="custom-control-label followUp_tick" for="customCheck4">Create follow-up task on no reply</label>
+                                                        </div>
+                                                        <div class="btn_grey_div">
+                                                            <button type="submit" class="btn_grey_solid w-100">Send</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                 
+                            </div>
+    
+                            <!-- ========================== Activity Block ================================ -->
+                            <div class="activity-container" id="activity">
+                                <div class="container" style="padding-left: 5%; padding-right: 5%;">
+                                  <div class="d-flex flex-wrap justify-content-between align-items-center" style="padding-top: 15px; padding-bottom: 15px;">
+                                      <button type="button" class="btn btn_openclose_title px-0" data-toggle="collapse" data-target="#BLK-activity">
+                                          <div>
+                                              <p class="block_title">Activity</p>
+                                          </div>
+                                      </button>
+                                      <!-- Dropdown Select Menu -->
+                                      <div class="activity_select_div d-flex flex-wrap justify-content-end align-items-center">
+                                          <div>
+                                              <select class="custom-select">
+                                                  <option selected>Most Recent First</option>
+                                                  <option value="1">Most Relevent</option>
+                                                  <option value="2">Updated</option>
+                                                  <option value="3">Three</option>
+                                                </select>
+                                          </div>
+                                      </div>
+                                      <button type="button" class="btn btn_openclose_missingInfo btn_openclose_icon px-0" data-toggle="collapse" data-target="#BLK-activity">
+                                          <!-- <div class="d-flex align-items-center"> -->
+                                            <img src="assets/images/toggle_add_icon.svg">
+                                          <!-- </div> -->
+                                      </button>
+                                  </div>
+                                  
+                                  <div id="BLK-activity" class="collapse collapsable-block">
+                                      <div class="activity-items">
+                                          <!-- msg -->
+                                          <div class="d-flex flex-wrap justify-content-start align-items-center" style="padding-top: 10px; padding-bottom: 10px;">
+                                              <div class="position-relative" style="z-index: 10;"> 
+                                                  <div class="circle_firstChild"> <!--modified class to remove before class-->
+                                                      <img class="circle_icon" src="assets/images/SVG/activity_sample_icon.svg">
+                                                  </div>
+                                              </div>
+                                              <div class="activity-box" style="width: 86%;">
+                                                  <div style="padding-left: 15px; padding-right: 0px; align-items: center;">
+                                                      <h3 class="pt-2">Your application was moved to <strong>Appraisals</strong></h3>
+                                                      <p>23 minutes ago</p>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <!-- msg -->
+                                          <div class="d-flex flex-wrap justify-content-start align-items-center" style="padding-top: 10px; padding-bottom: 10px;">
+                                              <div class="position-relative" style="z-index: 10;"> 
+                                                  <div class="circle">
+                                                      <img class="circle_icon" src="assets/images/SVG/activity_sample_icon.svg">
+                                                  </div>
+                                              </div>
+                                              <div class="activity-box" style="width: 86%;">
+                                                  <div style="padding-left: 15px; padding-right: 0px; align-items: center;">
+                                                      <h3 class="pt-2">Your loan advisor emailed you about the pending documents</h3>
+                                                      <p>1 day ago</p>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <!-- msg -->
+                                          <div class="d-flex flex-wrap justify-content-start align-items-center" style="padding-top: 10px; padding-bottom: 10px;">
+                                              <div class="position-relative" style="z-index: 10;"> 
+                                                  <div class="circle">
+                                                      <img class="circle_icon" src="assets/images/SVG/activity_sample_icon.svg">
+                                                  </div>
+                                              </div>
+                                              <div class="activity-box" style="width: 86%;">
+                                                  <div style="padding-left: 15px; padding-right: 0px; align-items: center;">
+                                                      <h3 class="pt-2">You uploaded your <strong>2020 tax returns</strong></h3>
+                                                      <p>2 days ago</p>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <!-- msg  -->
+                                          <div class="d-flex flex-wrap justify-content-start align-items-center" style="padding-top: 10px; padding-bottom: 10px;">
+                                              <div class="position-relative" style="z-index: 10;"> 
+                                                  <div class="circle">
+                                                      <img class="circle_icon" src="assets/images/SVG/activity_sample_icon.svg">
+                                                  </div>
+                                              </div>
+                                              <div class="activity-box" style="width: 86%;">
+                                                  <div style="padding-left: 15px; padding-right: 0px; align-items: center;">
+                                                      <h3 class="pt-2">You submitted your 1003 application</h3>
+                                                      <p>3 days ago</p>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+          
+                                      <div class="recent-activity pt-3 pb-3">
+                                          <button type="button" class="btn_grey_transparent">View More Activity</button>
+                                      </div>
+                                  </div>
+                                  
+                                </div>
+                            </div>
+
+                        </section>
+    
+                        <!----------------------------------  Right Column -------------------------------------------------->
+                        
+                        <!-- Borrower Details Block  -->
+                        <section class="LEFT col-12 col-xl-3 order-0 order-xl-last" >
+                            <div style="position: sticky; top: 226px; z-index: 10;">
+
+                                <!-- Borrower Details -->
+                                <div class="side_box">
+                                    <div class="heading d-flex flex-nowrap justify-content-between align-items-center">
+                                        <h2>Borrower Details</h2>
+                                        <p>86%</p>
+                                    </div>
+                                    <div class="list_items" style="display: grid; grid-template-columns: 2fr 3fr;">
+                                        <p>Type</p>
+                                        <p>Investor</p>
+                                        <p>Full Name</p>
+                                        <p>Rick Jackson</p>
+                                        <p>Phone</p>
+                                        <p>(499) 3902 100</p>
+                                        <p>Email</p>
+                                        <p>rick@domain.com</p>
+                                        <p>Prefers</p>
+                                        <p>Texting</p>
+                                        <p>Source</p>
+                                        <p>Referral</p>
+                                        <p>Referral</p>
+                                        <p>happyholidays100</p>
+                                    </div>
+                                    <h3>Financials</h3>
+                                    <div class="list_items" style="display: grid; grid-template-columns: 2fr 3fr;">
+                                        <p>Experience</p>
+                                        <p>7 flips in last 32 mo</p>
+                                        <p>Credit</p>
+                                        <p>730</p>
+                                        <p>Bankruptcy</p>
+                                        <p>None</p>
+                                        <p>Tax Lien</p>
+                                        <p>Yes ($37,940)</p>
+                                    </div>
+                                </div>
+                                
+
+                                <!-- Property Details -->
+                                <div class="side_box">
+                                    <div class="heading d-flex flex-nowrap justify-content-between align-items-center">
+                                        <h2>Property Details</h2>
+                                        <p>92%</p>
+                                    </div>
+                                    <div class="d-flex align-items-center my-3" style="gap: 10px;">
+                                        <div class="box_1">Photos from Zillow</div>
+                                        <div class="box_2">Streetview</div>
+                                    </div>
+                                    <div class="list_items" style="display: grid; grid-template-columns: 2fr 3fr;">
+                                        <p>Address</p>
+                                        <p>1900 Willow Street, N...</p>
+                                        <p>Specs</p>
+                                        <p>3bed / 3bath / 2,2k sqft</p>
+                                        <p>Status</p>
+                                        <p>Leased</p>
+                                        <p>Est. Value</p>
+                                        <p>$478,500</p>
+                                        <p>Rent</p>
+                                        <p>$2,300/mo</p>
+                                        <p>Est. Rent</p>
+                                        <p>$2,750/mo</p>
+                                        <p>Last Sale</p>
+                                        <p>$259,000 in 2005</p>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </section>
+
+            </div>
+        </div>
+    </main>
+
+
+    
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+        
+    <!-- custom JS-->
+    <script src="assets/js/custom.js"></script>
+</body>
+</html>

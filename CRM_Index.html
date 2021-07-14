@@ -1,0 +1,544 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fund Me V2</title>
+
+    <!-- Fonts Family -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <!-- style CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+
+</head>
+<body>
+    <!------------------------------------------- HEADER --------------------------------------------------------->
+    <header class="header_top bg-header" style="position: sticky; top: 0; z-index: 20;">
+        <div class="container" style="height: 100%;">
+            <div class="d-flex flex-nowrap align-items-center" style="height: 100%">
+                <div class="d-flex flex-nowrap justify-content-between align-items-center" style="height: 100%; gap: 15px;">
+                    <a href="#" class="d-flex align-items-center" style="gap: 5px; height: 100%;"><img src="assets/images/SVG/fundme_logo_simple.svg" alt="fundme-logo"></a>
+                    <a href="#" class="d-flex align-items-center" style="gap: 5px; height: 100%;">
+                        <img src="assets/images/SVG/header_dashboard_icon.svg" alt="fundme-logo">
+                        <span class="d-none d-lg-flex">Dashboard</span>
+                    </a>
+                    <a href="#" class="d-flex align-items-center" style="gap: 5px; height: 100%;">
+                        <img src="assets/images/SVG/header_application_icon.svg" alt="fundme-logo">
+                        <span class="d-none d-lg-flex">Applications</span>
+                    </a>
+                </div>
+                <div class="d-flex flex-wrap justify-content-center ml-auto" style="gap: 10px;">
+                    <div class="nav-item dropdown d-flex align-items-center">
+                        <a class="nav-link dropdown-toggle position-relative" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="assets/images/header_notification-bell.svg" alt="notification-icon">
+                            <img style="position: absolute; top: 5px; left: 22px;" src="assets/images/Rectangle_header.svg">
+                            <p id="notifications_no" style="position: absolute; top: 2px; left: 27px; color: black; font-size: 11px;">2</p>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                          <a class="dropdown-item" href="#">Notificaton 1</a>
+                          <a class="dropdown-item" href="#">Notification 2</a>
+                          <a class="dropdown-item" href="#">Notification 3</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle header_text_right" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <span class="d-none d-sm-flex">valdis@domain.com</span> 
+                              <img class="d-none d-sm-flex" src="assets/images/header_dropdown_arrow_top.svg">
+                              <div class="d-flex align-items-center ml-3"><img src="assets/images/svg/header_user_dp.svg"></div>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                              <a class="dropdown-item" href="#">My Profile</a>
+                              <a class="dropdown-item" href="#">My Account</a>
+                              <a class="dropdown-item" href="#">Preferences</a>
+                            </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!----------------------------------------- SUB-HEADER --------------------------------------------------------->
+    <section class="sub-header bg-white" style="position: sticky; top: 50px; z-index: 15;">
+        <div class="container">
+            <div class="sub-header d-flex flex-wrap align-items-center" style="gap: 15px; padding: 15px 0;">
+                <!-- Left Text -->
+                <div class="ml-2">
+                    <p>193 applications</p>
+                </div>
+                <!-- Search Form -->
+                <form class="ml-auto search_form_div">
+                    <div class="form-group mb-0 position-relative">
+                        <input type="text" class="form-control search_form" id="formGroupExampleInput" placeholder="Search">
+                        <img class="search_icon" src="assets/images/SVG/search_icon.svg">
+                    </div>
+                </form>
+                <div class="index_subheader2 d-flex flex-wrap justify-content-between align-items-center">
+                    <!-- Radio Switching Buttons for View -->
+                    <div class="radioPanel mr-3">
+                        <div class="opt_1 active">
+                            <input type="radio" class="radio_input" id="radio1" name="set" checked />
+                            <label class="rad_1">List</label>
+                        </div>
+                        <div class="opt_2">
+                            <input type="radio" class="radio_input" id="radio2" name="set" />
+                            <label class="rad_2">Kanban</label>
+                        </div>
+                    </div>
+                    <!-- Selecting Status -->
+                    <select class="custom-select manual_status_select mr-3">
+                        <option selected>All Statuses</option>
+                        <option value="1">Show New Lead</option>
+                        <option value="2">Show Long App</option>
+                        <option value="3">Show Doc Collection</option>
+                    </select>
+                    <!-- New Application Anchor -->
+                    <div class="new_app_div d-flex flex-wrap justify-content-center">
+                        <a href='#' class="btn_grey_solid">+ New Application</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================== Main Central Body ===============================================--->
+    <main class="body bg_main ">
+        <div class="container pt-5">
+            <div class="row">
+        
+                
+                        <section class="CENTER col-12">
+                            <!-- ============================ Documents/Tasks ================================== -->
+                            <div class="block_container" id="">
+                                <div class="container" style="padding-left: 1%; padding-right: 1%;">
+                                    <div class="d-flex flex-wrap justify-content-between align-items-center" style="padding-top: 15px; padding-bottom: 15px;">
+                                        <!-- Table -->
+                                        <div class="table-responsive-xl">
+                                            <table class="table ">
+                                                <thead>
+                                                  <tr>
+                                                    <th scope="col" style="width: 23%; min-width: 225px;">
+                                                        <select class="custom-select index_select" style="background-position-x: 75px;">
+                                                            <option selected>Property</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </th>
+                                                    <th scope="col" style="width: 9%; min-width: 90px;">
+                                                        <select class="custom-select index_select" style="background-position-x: 56px;">
+                                                            <option selected>Value</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </th>
+                                                    <th scope="col" style="width: 15%; min-width: 142px;">
+                                                        <select class="custom-select index_select" style="background-position-x: 115px;">
+                                                            <option selected>Contact Person</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </th>
+                                                    <th scope="col" style="width: 20%; min-width: 217px;">
+                                                        <select class="custom-select index_select" style="background-position-x: 60px;">
+                                                            <option selected>Status</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </th>
+                                                    <th scope="col" style="width: 8%; min-width: 65px;">
+                                                        <select class="custom-select index_select" style="background-position-x: 45px;">
+                                                            <option selected>Age</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </th>
+                                                    <th scope="col" style="width: 11%; min-width: 102px;">
+                                                        <select class="custom-select index_select" style="background-position-x: 80px;">
+                                                            <option selected>Next Step</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </th>
+                                                    <th scope="col" style="width: 12%; min-width: 116px;">
+                                                        <select class="custom-select index_select" style="background-position-x: 78px;">
+                                                            <option selected>Assigned</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                    </th>
+                                                    <th scope="col" style="width: 3%; ">
+                                                    </th>
+                                                  </tr>
+                                                </thead>
+                                                <tbody>
+                                                <!-- Row:1  -->
+                                                  <tr>
+                                                    <td scope="row">
+                                                        <div class="custom-control custom-checkbox manual_checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                                            <label class="custom-control-label" for="customCheck1">14381 Rochester Rd, Phelan, CA, USA</label>
+                                                        </div>
+                                                    </td>
+                                                    <td>$650,000</td>
+                                                    <td>Jackie Martinez</td>
+                                                    <td>
+                                                        <div class="d-flex justify-content-start align-items-center" style="gap: 10px;">
+                                                            <div class="bar">
+                                                                <div class="progress"></div>
+                                                                <div class="dot"></div>
+                                                                <div class="dot"></div>
+                                                                <div class="dot"></div>
+                                                                <div class="dot"></div>
+                                                            </div>
+                                                            New Lead
+                                                        </div>
+                                                    </td>
+                                                    <td>1d</td>
+                                                    <td>In 3 days</td>
+                                                    <td>Emily LaVitola</td>
+                                                    <td>
+                                                        <div class="dropdown">
+                                                            <button class="btn dropdown-toggle btn_dropdown_dots" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                <img src="assets/images/SVG/dropdown_threeDots.svg">
+                                                            </button>
+                                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                              <a class="dropdown-item" href="#">Edit</a>
+                                                              <a class="dropdown-item" href="#">Update</a>
+                                                              
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                  </tr>
+                                                <!-- Row:2  -->
+                                                  <tr>
+                                                    <td scope="row">
+                                                            <div class="custom-control custom-checkbox manual_checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                                                <label class="custom-control-label" for="customCheck2">1717 East Mesquite Lane, Victoria, TX, USA</label>
+                                                            </div>
+                                                    </td>
+                                                    <td>$1,500,000</td>
+                                                    <td>Kiera Felipe</td>
+                                                    <td>
+                                                        <div class="d-flex justify-content-start align-items-center" style="gap: 10px;">
+                                                            <div class="bar">
+                                                                <div class="progress"></div>
+                                                                <div class="dot"></div>
+                                                                <div class="dot"></div>
+                                                                <div class="dot"></div>
+                                                                <div class="dot"></div>
+                                                            </div>
+                                                            Doc Collection
+                                                        </div>
+                                                    </td>
+                                                    <td>3d</td>
+                                                    <td>In 2 days</td>
+                                                    <td>Andy Petersen</td>
+                                                    <td>
+                                                            <div class="dropdown">
+                                                                <button class="btn dropdown-toggle btn_dropdown_dots" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                    <img src="assets/images/SVG/dropdown_threeDots.svg">
+                                                                </button>
+                                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                                  <a class="dropdown-item" href="#">Edit</a>
+                                                                  <a class="dropdown-item" href="#">Update</a>
+                                                                  
+                                                                </div>
+                                                              </div>
+                                                    </td>
+                                                  </tr>
+                                                <!-- Row:3  -->
+                                                  <tr>
+                                                    <td scope="row">
+                                                            <div class="custom-control custom-checkbox manual_checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="customCheck3">
+                                                                <label class="custom-control-label" for="customCheck3">110 De Normandie Way, Martinez, CA, USA</label>
+                                                            </div>
+                                                    </td>
+                                                    <td>$375,000</td>
+                                                    <td>Tom Muner</td>
+                                                    <td>
+                                                        <div class="d-flex justify-content-start align-items-center" style="gap: 10px;">
+                                                            <div class="bar">
+                                                                <div class="progress"></div>
+                                                                <div class="dot"></div>
+                                                                <div class="dot"></div>
+                                                                <div class="dot"></div>
+                                                                <div class="dot"></div>
+                                                            </div>
+                                                            Long App
+                                                        </div> 
+                                                    </td>
+                                                    <td>3d</td>
+                                                    <td>In 2 days</td>
+                                                    <td>Steve Alarid</td>
+                                                    <td>
+                                                            <div class="dropdown">
+                                                                <button class="btn dropdown-toggle btn_dropdown_dots" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                    <img src="assets/images/SVG/dropdown_threeDots.svg">
+                                                                </button>
+                                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                                  <a class="dropdown-item" href="#">Edit</a>
+                                                                  <a class="dropdown-item" href="#">Update</a>
+                                                                 
+                                                                </div>
+                                                              </div>
+                                                    </td>
+                                                  </tr>
+                                                <!-- Row:4  -->
+                                                  <tr>
+                                                    <td scope="row">
+                                                            <div class="custom-control custom-checkbox manual_checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="customCheck4">
+                                                                <label class="custom-control-label" for="customCheck4">14381 Rochester Rd, Phelan, CA, USA</label>
+                                                            </div>
+                                                    </td>
+                                                    <td>$650,000</td>
+                                                    <td>Jackie Martinez</td>
+                                                    <td>
+                                                        <div class="d-flex justify-content-start align-items-center" style="gap: 10px;">
+                                                            <div class="bar">
+                                                                <div class="progress"></div>
+                                                                <div class="dot"></div>
+                                                                <div class="dot"></div>
+                                                                <div class="dot"></div>
+                                                                <div class="dot"></div>
+                                                            </div>
+                                                            New Lead
+                                                        </div> 
+                                                    </td>
+                                                    <td>1d</td>
+                                                    <td>In 3 days</td>
+                                                    <td>Emily LaVitola</td>
+                                                    <td>
+                                                            <div class="dropdown">
+                                                                <button class="btn dropdown-toggle btn_dropdown_dots" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                    <img src="assets/images/SVG/dropdown_threeDots.svg">
+                                                                </button>
+                                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                                  <a class="dropdown-item" href="#">Edit</a>
+                                                                  <a class="dropdown-item" href="#">Update</a>
+                                                                  
+                                                                </div>
+                                                              </div>
+                                                    </td>
+                                                  </tr>
+                                                <!-- Row:5  -->
+                                                  <tr>
+                                                    <td scope="row">
+                                                            <div class="custom-control custom-checkbox manual_checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="customCheck5">
+                                                                <label class="custom-control-label" for="customCheck5">1717 East Mesquite Lane, Victoria, TX, USA</label>
+                                                            </div>
+                                                    </td>
+                                                    <td>$1,500,000</td>
+                                                    <td>Kiera Felipe</td>
+                                                    <td>
+                                                        <div class="d-flex justify-content-start align-items-center" style="gap: 10px;">
+                                                            <div class="bar">
+                                                                <div class="progress"></div>
+                                                                <div class="dot"></div>
+                                                                <div class="dot"></div>
+                                                                <div class="dot"></div>
+                                                                <div class="dot"></div>
+                                                            </div>
+                                                            Doc Collection
+                                                        </div>
+                                                    </td>
+                                                    <td>3d</td>
+                                                    <td>In 2 days</td>
+                                                    <td>Andy Petersen</td>
+                                                    <td>
+                                                            <div class="dropdown">
+                                                                <button class="btn dropdown-toggle btn_dropdown_dots" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                    <img src="assets/images/SVG/dropdown_threeDots.svg">
+                                                                </button>
+                                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                                  <a class="dropdown-item" href="#">Edit</a>
+                                                                  <a class="dropdown-item" href="#">Update</a>
+                                                                  
+                                                                </div>
+                                                              </div>
+                                                    </td>
+                                                  </tr>
+                                                <!-- Row:6  -->
+                                                  <tr>
+                                                    <td scope="row">
+                                                            <div class="custom-control custom-checkbox manual_checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="customCheck6">
+                                                                <label class="custom-control-label" for="customCheck6">110 De Normandie Way, Martinez, CA, USA</label>
+                                                            </div>
+                                                    </td>
+                                                    <td>$375,000</td>
+                                                    <td>Tom Muner</td>
+                                                    <td>
+                                                        <div class="d-flex justify-content-start align-items-center" style="gap: 10px;">
+                                                            <div class="bar">
+                                                                <div class="progress"></div>
+                                                                <div class="dot"></div>
+                                                                <div class="dot"></div>
+                                                                <div class="dot"></div>
+                                                                <div class="dot"></div>
+                                                            </div>
+                                                            Long App
+                                                        </div>
+                                                    </td>
+                                                    <td>3d</td>
+                                                    <td>In 2 days</td>
+                                                    <td>Steve Alarid</td>
+                                                    <td>
+                                                            <div class="dropdown">
+                                                                <button class="btn dropdown-toggle btn_dropdown_dots" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                    <img src="assets/images/SVG/dropdown_threeDots.svg">
+                                                                </button>
+                                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                                  <a class="dropdown-item" href="#">Edit</a>
+                                                                  <a class="dropdown-item" href="#">Update</a>
+                                                               
+                                                                </div>
+                                                              </div>
+                                                    </td>
+                                                  </tr>
+                                                <!-- Row:7  -->
+                                                  <tr>
+                                                    <td scope="row">
+                                                            <div class="custom-control custom-checkbox manual_checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="customCheck7">
+                                                                <label class="custom-control-label" for="customCheck7">110 De Normandie Way, Martinez, CA, USA</label>
+                                                            </div>
+                                                    </td>
+                                                    <td>$375,000</td>
+                                                    <td>Tom Muner</td>
+                                                    <td>
+                                                        <div class="d-flex justify-content-start align-items-center" style="gap: 10px;">
+                                                            <div class="bar">
+                                                                <div class="progress"></div>
+                                                                <div class="dot"></div>
+                                                                <div class="dot"></div>
+                                                                <div class="dot"></div>
+                                                                <div class="dot"></div>
+                                                            </div>
+                                                            Long App
+                                                        </div>
+                                                    </td>
+                                                    <td>3d</td>
+                                                    <td>In 2 days</td>
+                                                    <td>Steve Alarid</td>
+                                                    <td>
+                                                            <div class="dropdown">
+                                                                <button class="btn dropdown-toggle btn_dropdown_dots" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                    <img src="assets/images/SVG/dropdown_threeDots.svg">
+                                                                </button>
+                                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                                  <a class="dropdown-item" href="#">Edit</a>
+                                                                  <a class="dropdown-item" href="#">Update</a>
+                                                                 
+                                                                </div>
+                                                              </div>
+                                                    </td>
+                                                  </tr>
+                                                <!-- Row:8  -->
+                                                  <tr>
+                                                    <td scope="row">
+                                                            <div class="custom-control custom-checkbox manual_checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="customCheck8">
+                                                                <label class="custom-control-label" for="customCheck8">14381 Rochester Rd, Phelan, CA, USA</label>
+                                                            </div>
+                                                    </td>
+                                                    <td>$650,000</td>
+                                                    <td>Jackie Martinez</td>
+                                                    <td>
+                                                        <div class="d-flex justify-content-start align-items-center" style="gap: 10px;">
+                                                            <div class="bar">
+                                                                <div class="progress"></div>
+                                                                <div class="dot"></div>
+                                                                <div class="dot"></div>
+                                                                <div class="dot"></div>
+                                                                <div class="dot"></div>
+                                                            </div>
+                                                            New Lead
+                                                        </div>
+                                                    </td>
+                                                    <td>1d</td>
+                                                    <td>In 3 days</td>
+                                                    <td>Emily LaVitola</td>
+                                                    <td>
+                                                            <div class="dropdown">
+                                                                <button class="btn dropdown-toggle btn_dropdown_dots" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                    <img src="assets/images/SVG/dropdown_threeDots.svg">
+                                                                </button>
+                                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                                  <a class="dropdown-item" href="#">Edit</a>
+                                                                  <a class="dropdown-item" href="#">Update</a>
+                                                                  
+                                                                </div>
+                                                              </div>
+                                                    </td>
+                                                  </tr>
+                                                  
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        
+
+                                        <footer>
+                                            <div class="d-flex flex-wrap justify-content-between align-items-center" style="padding-left: 1%; padding-right: 1%;">
+                                                <select class="custom-select manual_pages_select my-3 my-xl-0">
+                                                    <option selected>Show 15 rows per page</option>
+                                                    <option value="1">Show 10 rows per page</option>
+                                                    <option value="2">Show 20 rows per page</option>
+                                                    <option value="3">Show 25 rows per page</option>
+                                                </select>
+                                                <nav aria-label="Page navigation example" class="pg_nav1">
+                                                    <ul class="pagination">
+                                                      <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                      <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                                      <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                                    </ul>
+                                                </nav>
+                                                <nav aria-label="Page navigation example">
+                                                    <ul class="pagination" style="gap: 15px;">
+                                                      <li class="page-item"><a class="btn_grey_outline" href="#" style="text-transform: none;">Previous</a></li>
+                                                      <li class="page-item"><a class="btn_grey_solid"   href="#" style="text-transform: none;">Next</a></li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                        </footer>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+    
+            </div>
+        </div>
+    </main>
+
+
+    
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+        
+    <!-- custom JS-->
+    <script src="assets/js/custom.js"></script>
+</body>
+</html>

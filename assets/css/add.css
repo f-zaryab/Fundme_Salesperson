@@ -1,0 +1,15 @@
+.days_selection {
+    width: 13%;
+    border: 1px solid rgba(0,0,0,1);
+    border-radius: 0;
+    /* padding: 0.375rem 0 0.375rem 0.75rem; */
+    min-width: max-content;                                 /*========== change made*/
+}
+
+.sales_people {
+    width: 15%;
+    border: 1px solid rgba(0,0,0,1);
+    border-radius: 0;
+    /* padding: 0.375rem 0 0.375rem 0.75rem; */
+    min-width: max-content;                                 /*======= change made*/
+}
